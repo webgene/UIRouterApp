@@ -1,0 +1,20 @@
+{
+  "name": "uirouter",
+  "description": "Angular UI Router step by step",
+  "main": "index.js",
+  "authors": [
+    "webgene"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Angular"
+  ],
+  "moduleType": [],
+  "homepage": "http://stubborncoder.com",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-ui-router": "ui-router#^0.2.18"
+  }
+
+}
