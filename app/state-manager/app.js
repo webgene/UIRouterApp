@@ -1,4 +1,4 @@
-angular.module("myApp", ["ui.router"])
+angular.module("default", ["ui.router"])
     .config(function($stateProvider, $urlRouterProvider){
         $stateProvider.state("home",{
             url: "/home",
@@ -13,6 +13,13 @@ angular.module("myApp", ["ui.router"])
             templateUrl: function ($stateParams){
                 return 'templates/' + $stateParams.view + '.html';
             }
-        }) 
+        }).state("link",{
+            url: "/link?view&name",
+            templateProvider: function ($timeout, $stateParams){
+                return $timeout(function() {
+                    return "<h1>Link1</h1><p>"+$stateParams.name+" "+$stateParams.view+"</p>";
+                }, 1000)
+            }
+        })
         
 });
