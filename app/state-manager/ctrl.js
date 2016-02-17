@@ -20,4 +20,12 @@ angular.module("router.controller", ["ui.router"])
                     $scope.name = "Ui Router About"
                 }
             })
+            .state("link1", {
+                url: "/link1?name",
+                template: '<h1>Link1</h1><p>{{greeting}}</p>',
+                controllerProvider: function($stateParams) {
+                    var ctrlName = $stateParams.name + "Ctrl";
+                    return ctrlName;
+                }
+            })
     });
