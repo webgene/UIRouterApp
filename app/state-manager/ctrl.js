@@ -9,23 +9,48 @@ angular.module("router.controller", ["ui.router"])
                 url: "/contact",
                 template: "<h1>Contact</h1><p>{{contact.greeting}}</p>",
                 /*controller: "RouterContactCtrl",
-                controllerAs: "contact"*/
+                 controllerAs: "contact"*/
                 //OR
                 controller: "RouterContactCtrl as contact"
             })
             .state("about", {
                 url: "/about",
                 template: '<h1>About</h1><p>{{name}}</p>',
-                controller : function ($scope) {
+                controller: function ($scope) {
                     $scope.name = "Ui Router About"
                 }
             })
             .state("link1", {
                 url: "/link1?name",
                 template: '<h1>Link1</h1><p>{{greeting}}</p>',
-                controllerProvider: function($stateParams) {
+                controllerProvider: function ($stateParams) {
                     var ctrlName = $stateParams.name + "Ctrl";
                     return ctrlName;
                 }
             })
+            .state("resolve", {
+                url: "/resolve",
+                templateUrl: "templates/resolve.html",
+                resolve: {
+                    gitHubService: 'githubServices',
+                    gitHubService2: function(gitHubService) {
+                        return gitHubService.getFollowers()
+                            .then(function(response){
+                                return response.data;
+                            })
+                    }
+                },
+                /*controller: function ($scope, gitHubService) {
+                    console.log('In Ctrl');
+                    gitHubService.getFollowers()
+                        .then(function(response) {
+                           $scope.followers = response.data;
+                        });
+                }*/
+                controller : "ResolveCtrl"
+            })
     });
+
+
+
+

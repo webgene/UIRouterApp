@@ -169,3 +169,11 @@ header nav ul li a {
     padding: 10px;
     background-color: #adf1ff;
 }
+
+/*Home Icon*/
+
+.home {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}

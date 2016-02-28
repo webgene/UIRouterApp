@@ -7,6 +7,8 @@
         .controller('RouterContactCtrl', routerContactCtrl);
     angular.module('router.controller')
         .controller('LinkCtrl', linkCtrl);
+    angular.module('router.controller')
+        .controller('ResolveCtrl', resolveCtrl);
 
 
     routerCtrl.$inject = ['$scope'];
@@ -26,6 +28,12 @@
 
     function linkCtrl($scope) {
         $scope.greeting="Controller Provider";
+    }
+
+    resolveCtrl.$inject = ['$scope', 'gitHubService2'];
+
+    function resolveCtrl(scope, gitHubService2) {
+        scope.followers = gitHubService2;
     }
 })();
 
