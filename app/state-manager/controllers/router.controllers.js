@@ -33,7 +33,7 @@
     resolveCtrl.$inject = ['$scope', 'gitHubService2'];
 
     function resolveCtrl(scope, gitHubService2) {
-        scope.followers = gitHubService2;
+        scope.followers = gitHubService2.followers;
     }
 })();
 

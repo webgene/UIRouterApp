@@ -36,7 +36,7 @@ angular.module("router.controller", ["ui.router"])
                     gitHubService2: function(gitHubService) {
                         return gitHubService.getFollowers()
                             .then(function(response){
-                                return response.data;
+                                return {followers: response.data};
                             })
                     }
                 },
