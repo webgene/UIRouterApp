@@ -28,6 +28,17 @@ angular.module("router.controller", ["ui.router"])
                     return ctrlName;
                 }
             })
+            .state("link2", {
+                url: "/link2",
+                template: '<h1>Link1</h1><p>{{param}}</p>',
+                params: {
+                    param1: null
+                },
+                controller: function($scope, $stateParams) {
+                    $scope.param = $stateParams.param1;
+                }
+
+            })
             .state("resolve", {
                 url: "/resolve",
                 templateUrl: "templates/resolve.html",
