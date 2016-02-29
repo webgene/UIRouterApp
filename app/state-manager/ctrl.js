@@ -32,10 +32,10 @@ angular.module("router.controller", ["ui.router"])
                 url: "/link2",
                 template: '<h1>Link1</h1><p>{{param}}</p>',
                 params: {
-                    param1: null
+                    param1: null || {}
                 },
                 controller: function($scope, $stateParams) {
-                    $scope.param = $stateParams.param1;
+                    $scope.param = $stateParams.param1.param;
                 }
 
             })
