@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="default">
+<head>
+    <meta charset="UTF-8">
+    <title>UI Router App</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+<div class="container">
+    <header>
+
+        <h1>State Manager</h1>
+        <nav>
+            <ul>
+                <li><a href="#/home">Home</a></li>
+                <li><a href="#/contact">Contact</a></li>
+                <li><a href="#/about?view=about">About</a></li>
+                <li><a href="#/link?view=Link1&name=Ui+Router">Link1</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main">
+        <div class="info">
+            <p>State is activated by clicking any of the Navigation link(Home, Contact or About)</p>
+            <p>When a state is activated, its templates are automatically inserted into the ui-view of its parent state's template, since no parent state is defined, default parent state is index.html</p>
+        </div>
+        <div class="view" ui-view>
+            <i>View will be loaded Here by clicking any navigation link above(Home, Contact or about).</i>
+        </div>
+        <div class="nav-link">
+            <a href="activate.html">Activate a State</a>
+        </div>
+        <div class="nav-link">
+            <a href="router-controller.html">Define Controller and Resolve Promise for a State</a>
+        </div>
+        <div class="nav-link">
+            <a href="custom-data.html">Custom Data</a>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+<script type="text/javascript" src="../../bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="../../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</body>
+
+
+
+
+</html>
