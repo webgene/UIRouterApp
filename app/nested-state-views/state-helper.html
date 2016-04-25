@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="nestedState">
+<html lang="en" ng-app="stateHelper">
 <head>
     <meta charset="UTF-8">
     <title>UI Router App</title>
@@ -16,20 +16,17 @@
         <nav>
             <ul>
                 <li><a href="#/home">Home</a></li>
-                <li><a href="#/home/child1">Child1</a></li>
-                <li><a ui-sref="home.child2">Child2</a></li>
-                <li><a href="/child3">Child3</a></li>
+
             </ul>
         </nav>
     </header>
 
     <div class="main">
         <div class="info">
-            <p>State is activated by clicking any of the Navigation link(Home, Contact or About)</p>
-            <p>When a state is activated, its templates are automatically inserted into the ui-view of its parent state's template, since no parent state is defined, default parent state is index.html</p>
+            <p>Nested State Using State Helper</p>
         </div>
         <div class="view" ui-view>
-            <i>View will be loaded Here by clicking any navigation link above(Home, Contact or about).</i>
+            <i>View will be loaded Here by clicking any navigation link above.</i>
         </div>
     </div>
 

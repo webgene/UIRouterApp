@@ -40,3 +40,16 @@ angular.module("nestedState", ["ui.router"])
 
 
     });
+
+
+angular.module("stateHelper", ["ui.router"])
+    .config(function($stateProvider){
+        $stateProvider
+            .state("parent",{
+                url: "/parent",
+                template: "<h1>Parent</h1><p>Parent state</p><div ui-view></div>"
+            })
+
+
+
+    });
